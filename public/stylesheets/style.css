@@ -3,7 +3,7 @@
     --secondary: #9caea9;
     --tertiary: #788585;
     --light-dark: #6f6866;
-    --dark: #38302e;
+    --dark:#170f0c;
     --border-radius: .3rem;
   }
   
@@ -38,7 +38,7 @@
     width: 94%;
   }
   a {
-    color: bisque;
+    /* color: bisque; */
     text-decoration: none;
   }
   p {
@@ -128,11 +128,6 @@
   .list-item:hover {
     background-color: var(--dark);
   }
-
-
-  .card-body {
-    padding: 2.5%;
-  }
   
   /* FORM */
   .form-label,
@@ -154,6 +149,52 @@
     border: 2px solid var(--light-dark);
     border-radius: var(--border-radius);
   }
+
+  /* CARDS */
+.card {
+  margin: 0 0 20px 0;
+  border: 3px solid var(--dark);
+  /* border-radius: var(--border-radius); */
+}
+
+.card-header {
+  color: var(--primary);
+  background-color: var(--dark);
+  padding: 1.5%;
+}
+
+.card-body {
+  /* padding: .25%; */
+  margin-left: 2.5%;;
+}
+
+ 
+.comment-form {
+  margin-bottom: 5%;
+}
+
+.comment {
+  padding: 1%;
+  margin-bottom: 1%;
+}
+
+.comment:nth-child(odd) {
+  background-color: #fff5eb;
+}
+
+.comment .meta {
+  font-size: 100%;
+  margin-bottom: .5%;
+  opacity: .6;
+}
+
+.new-post-form input {
+  width: 300px;
+}
+
+.edit-post-form {
+  margin-bottom: 5%;
+}
   
   /* HEIGHT / WIDTH UTILS */
   .min-100-vh {
