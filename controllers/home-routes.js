@@ -33,7 +33,7 @@ router.get('/', (req, res) => {
         const posts = dbPostData.map(post => post.get({ plain: true }));
         res.render('homepage', {
             posts,
-            // loggedIn: req.session.loggedIn
+            loggedIn: req.session.loggedIn
         });
 
     }) 
@@ -90,7 +90,7 @@ router.get('/post/:id', (req, res) => {
         // pass data to template
         res.render('single-post', {
             post,
-            // loggedIn: req.session.loggedIn
+            loggedIn: req.session.loggedIn
         });
     })
     .catch(err => {

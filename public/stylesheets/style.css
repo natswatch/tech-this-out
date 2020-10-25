@@ -37,10 +37,16 @@
     margin: 20px auto;
     width: 94%;
   }
-  a {
-    /* color: bisque; */
+  nav a{
+    font-size: 22px;
+    color: var(--primary);
     text-decoration: none;
+    margin: 1%;
   }
+  nav {
+    margin-bottom: 10px;
+  }
+
   p {
     font-size: 1.2rem;
   }
@@ -93,6 +99,16 @@
     background-color: var(--tertiary);
     transform: translate(0, 0);
     box-shadow: 2px 2px var(--dark);
+  }
+  .btn-no-style {
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    text-decoration: none;
+    color: var(--primary);
+    font-size: 22px;
+    margin-left: 1%;
   }
   
   .hero {

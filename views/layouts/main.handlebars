@@ -16,13 +16,14 @@
         <header class="hero">
             <nav>
 
-                <button type="submit" class="btn">Home</button>
+                <a href='/'> Home </a>
                 {{#if loggedIn}}
-                <button type="submit" class="btn">Dashboard</button>
-                <button type="submit" class="btn">Logout</button>
+                <a href='/dashboard'> Dashboard </a>
+                <button id="logout" class="btn-no-style"> Logout </button>
                 {{else}}
-                <button type="submit" class="btn">Login</button>
-                <button type="submit" class="btn">Sign Up</button>
+                <a href='/login'> Login </a>
+                <a href='/login'> Sign Up </a>
+                
                 {{/if}}
             </nav>
             <h1 class="app-title">
@@ -30,7 +31,9 @@
             </h1>
         </header>
         <main>
-            {{{ body }}}
+            <div class="col-12">
+                {{{ body }}}
+            </div>
         </main>
         <footer>
             Thanks for visiting!
