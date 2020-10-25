@@ -3,7 +3,6 @@ const { Post, User, Vote, Comment } = require('../../models');
 const { restore } = require('../../models/User');
 const sequelize = require('../../config/connection');
 
-
 // get all posts
 router.get('/', (req,res) => {
     console.log('================');

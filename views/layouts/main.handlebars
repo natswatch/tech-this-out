@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:400,400i,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+  <link rel="stylesheet" href="/stylesheets/style.css" />
+  <title>Tech This Out</title>
+</head>
+
+<body>
+    <div class="wrapper">
+        <header class="hero">
+            <nav>
+
+                <button type="submit" class="btn">Home</button>
+                {{#if loggedIn}}
+                <button type="submit" class="btn">Dashboard</button>
+                <button type="submit" class="btn">Logout</button>
+                {{else}}
+                <button type="submit" class="btn">Login</button>
+                <button type="submit" class="btn">Sign Up</button>
+                {{/if}}
+            </nav>
+            <h1 class="app-title">
+               Tech This Out
+            </h1>
+        </header>
+        <main>
+            {{{ body }}}
+        </main>
+        <footer>
+            Thanks for visiting!
+        </footer>
+    </div>
+    {{#if loggedIn}}
+    <script src="/javascript/logout.js"></script>
+    {{/if}}
+</body>
+</html>
