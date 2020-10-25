@@ -47,15 +47,18 @@
     margin-bottom: 10px;
   }
 
+  a {
+    text-decoration: none;
+    color: var(--primary);
+  }
+
   p {
     font-size: 1.2rem;
   }
 
-  h3 a {
-    text-decoration: none;
-    color: var(--primary);
-    /* text-align: left; */
-    display: inline-block;
+  h4 {
+    text-align: right;
+    opacity: .6;
   }
 
   span {
@@ -64,38 +67,38 @@
     opacity: .6;
   }
     
-  }
   a:hover {
     color: var(--tertiary);
   }
   
-   .btn {
-    font-size: 1.3rem;
-    text-decoration:none;
-    padding: 6px 5px;
-    width: 100%;
-    display: block;
-    margin: 5px 0;
-    border-radius: var(--border-radius);
-    color: var(--primary);
-    border: none;
-    outline: none;
-    background-color: var(--light-dark);
-    box-shadow: 3px 3px var(--dark);
-    transform: translate(-1px, -1px);
-  }
+  .btn {
+  font-size: 1.3rem;
+  text-decoration:none;
+  padding: 6px 5px;
+  width: 100%;
+  display: block;
+  margin: 5px 0;
+  border-radius: var(--border-radius);
+  color: var(--primary);
+  border: none;
+  outline: none;
+  background-color: var(--light-dark);
+  box-shadow: 3px 3px var(--dark);
+  transform: translate(-1px, -1px);
+}
 
   textarea:focus, input:focus {
     outline: none;
     font-size: 18px;
   }
   
-  textarea {
-    width: 100%;
+  textarea  {
+    width: 100%; 
     min-height: 80px;
     margin-top: 1%;
   }
   
+
    .btn:hover {
     color: var(--primary);
     background-color: var(--tertiary);
@@ -106,24 +109,29 @@
   .btn-inline {
     display: inline;
   }
+
+  .center {
+    text-align: center;
+  }
   
-  .btn-back {
+  .big-btn {
     border-radius: var(--border-radius);
     color: var(--primary);
     border: none;
     outline: none;
-    background-color: var(--light-dark);
+    background-color: var(--dark);
     box-shadow: 3px 3px var(--secondary);
     transform: translate(-1px, -1px);
-    display: inline-block;
     width: auto;
-    margin-top: 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
     padding: 15px;
     text-decoration: none;
-    font-size: 1.2rem;
+    font-size: 2rem;
+    
   }
   
-   .btn-back:hover {
+   .big-btn:hover {
     color: var(--primary);
     background-color: var(--tertiary);
     transform: translate(0, 0);
@@ -205,12 +213,11 @@
 .card-header {
   color: var(--primary);
   background-color: var(--dark);
-  padding: 2%;
+  padding: 1%;
 }
 
 .card-body {
-  /* padding: .25%; */
-  margin-left: 2.5%;;
+  padding: .5%;
 }
 
  

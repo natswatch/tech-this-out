@@ -12,8 +12,7 @@ router.get('/', (req,res) => {
             'id',  
             'title', 
             'post_content',
-            'created_at',
-            [sequelize.literal('(SELECT COUNT(*) FROM vote WHERE post.id = vote.post_id)'), 'vote_count']
+            'created_at'
         ],
         // include the Comment model
         include: [
@@ -78,7 +77,7 @@ router.post('/', (req, res) => {
     Post.create({
         title: req.body.title,
         post_content: req.body.post_content,
-        user_id: req.body.user_id
+        user_id: req.session.user_id
     })
     .then(dbPostData => res.json(dbPostData))
     .catch(err => {
