@@ -1,3 +1,4 @@
+// async function that awaits on api fetch to save a new user's info
 async function signupFormHandler(event) {
     event.preventDefault();
 
@@ -24,6 +25,7 @@ async function signupFormHandler(event) {
     }
 }
 
+// async function that awaits api fetch to log in user
 async function loginFormHandler(event) {
     event.preventDefault();
 

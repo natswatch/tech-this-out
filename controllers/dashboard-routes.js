@@ -3,6 +3,7 @@ const sequelize = require('../config/connection');
 const { Post, User, Comment } = require('../models');
 const withAuth = require('../utils/auth');
 
+// display posts related to user logged in
 router.get('/', withAuth, (req,res) => {
     Post.findAll({
         where: {
@@ -40,6 +41,7 @@ router.get('/', withAuth, (req,res) => {
     });
 });
 
+// route to edit post that belongs to user that is logged in
 router.get('/edit/:id', withAuth, (req, res) => {
     Post.findOne({
         where: {
@@ -47,9 +49,8 @@ router.get('/edit/:id', withAuth, (req, res) => {
         },
         attributes: [
             'id',
-            'post_url',
             'title',
-            'created_at'
+            'post_content'
         ],
         include: [
         {
@@ -74,7 +75,7 @@ router.get('/edit/:id', withAuth, (req, res) => {
 
         // serialize data
         const post = dbPostData.get({ plain: true });
-        res.render('edit-post', {post});
+        res.render('edit-post', {post, loggedIn: req.session.loggedIn});
     })  
 })
 

@@ -1,7 +1,6 @@
 const router = require('express').Router();
 const { User, Post, Vote, Comment } = require('../../models');
 
-
 // GET /api/users
 router.get('/', (req, res) => {
     // Access our User model and run .findAll() method
@@ -18,6 +17,7 @@ router.get('/', (req, res) => {
 // GET /api/users/1
 router.get('/:id', (req, res) => {
     User.findOne({
+        // omit user passwords from api
         attributes: { exclude: ['password'] },
         where: {
             id: req.params.id
@@ -56,9 +56,8 @@ router.get('/:id', (req, res) => {
     });
 });
 
-// POST /api/users
+// creates a new user
 router.post('/', (req, res) => {
-    // expectt {username: 'Lernantino', email: 'lernantino@gmail.com', password: 'password1234'}
     User.create({
         username: req.body.username,
         email: req.body.email,
@@ -79,8 +78,8 @@ router.post('/', (req, res) => {
     });
 });
 
+// route to match user's entered info and their password
 router.post('/login', (req, res) => {
-    // expects {email: "lernantino@gmail.com", password: 'password1234'}
     User.findOne({
         where: {
             email: req.body.email
@@ -119,11 +118,8 @@ router.post('/logout', (req, res) => {
     }
 })
 
-// PUT /api/users/1
+// updates a single user
 router.put('/:id', (req, res) => {
-    // expects {username: 'Lernantino', email: 'lernantino@gmail.com', password: 'password1234'}
-
-    // if req.body has exact key/value pairs to match the model, you can just use `req.body` instead
     User.update(req.body, {
         individualHooks: true,
         where: {
@@ -143,7 +139,7 @@ router.put('/:id', (req, res) => {
     });
 });
 
-// DELETE /api/users/1
+// delete a user
 router.delete('/:id', (req, res) => {
     User.destroy({
         where: {

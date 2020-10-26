@@ -29,6 +29,7 @@ router.post('/', withAuth, (req, res) => {
     }
 });
 
+// route to delete a single comment
 router.delete('/:id', (req, res) => {
     Comment.destroy({
         where: {

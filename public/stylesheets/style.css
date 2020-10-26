@@ -98,7 +98,9 @@
     margin-top: 1%;
   }
   
-
+  #forms {
+    font-size: 20px;
+  }
    .btn:hover {
     color: var(--primary);
     background-color: var(--tertiary);
@@ -202,6 +204,10 @@
     border: 2px solid var(--light-dark);
     border-radius: var(--border-radius);
   }
+  
+  article a{
+    color: var(--dark);
+  }
 
   /* CARDS */
 .card {
@@ -247,7 +253,11 @@
 .edit-post-form {
   margin-bottom: 5%;
 }
-  
+
+#edit-title {
+  min-width: 60%;
+  min-height: 30px;
+}
   /* HEIGHT / WIDTH UTILS */
   .min-100-vh {
     min-height: 100vh;
@@ -267,38 +277,6 @@
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
-  }
-  
-  .justify-space-between {
-    justify-content: space-between;
-  }
-  
-  .justify-space-around {
-    justify-content: space-around;
-  }
-  
-  .justify-flex-start {
-    justify-content: flex-start
-  }
-  
-  .justify-flex-end {
-    justify-content: flex-end;
-  }
-  
-  .justify-center {
-    justify-content: center;
-  }
-  
-  .align-stretch {
-    align-items: stretch;
-  }
-  
-  .align-end {
-    align-items: flex-end;
-  }
-  
-  .align-center {
-    align-items: center;
   }
   
   .col-auto {

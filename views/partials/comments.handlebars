@@ -1,10 +1,11 @@
+{{!-- displays individual comment's content --}}
 <div class="comments">
     {{#each this}}
     <div class="card">
-        <h3 class="card-header"> </h3>
+        <div class="card-header"></div>
         <div class="card-body">
-        <p>{{comment_text}}</p>
-        <p>- {{user.username}} on {{format_date created_at}}</p> 
+            <p>{{comment_text}}</p>
+            <p>- {{user.username}} on {{format_date created_at}}</p> 
         </div>
     </div>
     {{/each}}

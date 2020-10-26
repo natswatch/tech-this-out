@@ -9,9 +9,12 @@ const hbs = exphbs.create({ helpers });
 
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
 
+// include env file
 require('dotenv').config();
+
+// creates session instance with a unique id
 const sess = {
-    secret: 'nonya',
+    secret: process.env.SESS_SECRET,
     cookie: {},
     resave: false,
     saveUninitialized: true,

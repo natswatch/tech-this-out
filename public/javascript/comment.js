@@ -1,3 +1,4 @@
+// async function awaits api fetch to create a new comment on a blog post
 async function commentFormHandler(event) {
     event.preventDefault();
 

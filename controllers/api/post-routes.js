@@ -2,6 +2,7 @@ const router = require('express').Router();
 const { Post, User, Vote, Comment } = require('../../models');
 const { restore } = require('../../models/User');
 const sequelize = require('../../config/connection');
+const withAuth = require('../../utils/auth')
 
 // get all posts
 router.get('/', (req,res) => {
@@ -37,13 +38,13 @@ router.get('/', (req,res) => {
     });
 });
 
+// route for viewing a single post
 router.get('/:id', (req, res) => {
     Post.findOne({
         where: {
             id: req.params.id
         },
-        attributes: ['id', 'title', 'post_content', 'created_at', 
-        [sequelize.literal('(SELECT COUNT(*) FROM vote WHERE post.id = vote.post_id)'), 'vote_count']
+        attributes: ['id', 'title', 'post_content', 'created_at'
         ],
         include: [
             {
@@ -73,6 +74,7 @@ router.get('/:id', (req, res) => {
     });
 });
 
+// route for creating a new blog post
 router.post('/', (req, res) => {
     Post.create({
         title: req.body.title,
@@ -86,24 +88,12 @@ router.post('/', (req, res) => {
     });
 });
 
-// Put /api/posts/upvote
-router.put('/upvote', (req, res) => {
-    // make sure the session exists first
-    if (req.session) {
-        // pass session id along with all destructured properties on req.body
-    Post.upvote({...req.body, user_id: req.session.user_id}, { Vote, Comment, User })
-        .then(updatedVoteData => res.json(updatedVoteData))
-        .catch(err => {
-            console.log(err);
-            res.status(500).json(err);
-        });
-    }
-});
-
-router.put('/:id', (req, res) => {
+// route for editing a blog post
+router.put('/:id', withAuth, (req, res) => {
     Post.update(
         {
-            title: req.body.title
+            title: req.body.title,
+            post_content: req.body.post_content
         },
         {
             where: {
@@ -124,7 +114,8 @@ router.put('/:id', (req, res) => {
     })
 })
 
-router.delete('/:id', (req, res) => {
+// route for deleting a blog post
+router.delete('/:id', withAuth, (req, res) => {
     Post.destroy({
         where: {
             id: req.params.id

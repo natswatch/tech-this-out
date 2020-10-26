@@ -1,3 +1,4 @@
+// async function awaits on api fetch to create a new blog post
 async function newFormHandler(event) {
     event.preventDefault();
 

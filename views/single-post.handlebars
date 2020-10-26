@@ -1,21 +1,24 @@
+{{!-- displays the post select and its comments --}}
 {{> post-info post }}
 {{> comments post.comments}}
 
+{{!-- allows for comment creation if user is logged in --}}
 {{#if loggedIn}}
 <div class="card">
     <form class="comment-form">
         <h3 class="card-header">new comment:</h3>
-        <div>
-            <textarea name="comment-body"></textarea>
-        </div>
-        
-        <div>
-            <button type="submit" class="btn">add comment</button>
+        <div class="card-body">
+            <div>
+                <textarea name="comment-body"></textarea>
+            </div>
+            
+            <div>
+                <button type="submit" class="btn">add comment</button>
+            </div>
         </div>
 </form>
 </div>
 {{/if}}
-
 
 {{#if loggedIn}}
 <script src="/javascript/comment.js"></script>

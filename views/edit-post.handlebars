@@ -1,0 +1,23 @@
+{{!-- Page display post being edited and give's user the option so edit or 
+delete blog post--}}
+article>
+    <a href="/dashboard">&larr; Back to dashboard</a>
+    <h2>
+        Edit Post
+    </h2>
+    <form class="edit-post-form">
+        <div class="card">
+            <div class="card-body">
+               Title: <br><input name="post-title" type="text" value="{{post.title}}" id="postTitle"/><br>
+                Content:<textarea name="post-content" class="edit-content">{{post.post_content}}</textarea>
+            </div>
+                       
+            <button type="submit" class="btn">Save post</button>
+            <button type="button" class="btn" id="delete-post-btn">Delete post</button>  
+        </div>
+
+    </form>
+</article>
+
+<script src="/javascript/edit-post.js"></script>
+<script src="/javascript/delete-post.js"></script>
