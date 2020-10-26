@@ -3,7 +3,7 @@ A CMS-style blog site similar to a Wordpress site, where developers can publish 
 This app follows the MVC paradigm in its architectural structure, using Handlebars.js as the templating language, Sequelize as the ORM, and the express-session npm package for authentication.
 
 ## Installation/Usage
-The application is accessible through the deployed URL.
+The application is accessible through the deployed URL, where users must first be created and then posts can be created through the registeres user.
 
 If you prefer to use the application locally:
 
@@ -27,3 +27,4 @@ Open your browser to http://localhost:3001/.
 <img src="https://user-images.githubusercontent.com/24613646/97123583-c1d3b400-16e9-11eb-8356-d3b4f9a1b839.png" width="300">
 
 ## Deployed URL
+https://stark-bayou-78549.herokuapp.com
